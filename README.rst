@@ -177,22 +177,21 @@ Code structure
      for key in dict:
          ...
 
-- Do not use the methods ``file.readline`` and ``file.readlines`` for iterate over the 
-  file. 
+- Do not use the file/stream methods ``readline`` and ``readlines`` to iterate over the file/stream. 
 
   .. code:: python
 
      # Bad
      while True:
-         line = file.readline()
+         line = file_or_stream.readline()
          ...
 
-     for line in file.readlines():
+     for line in file_or_stream.readlines():
          ...
 
 
      # Better
-     for line in file:
+     for line in file_or_stream:
          ...
 
 - Do not write useless operators ``if`` and ternary operators. 
